@@ -1,0 +1,20 @@
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Họ tên</th>
+            <th>Ngày sinh</th>
+            <th>Địa chỉ</th>
+            <th>Email</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let stu of service.list">
+            <td (click)="populateForm(stu)">[{{stu.Gender}}]-{{stu.StudentName}}</td>
+            <td (click)="populateForm(stu)">{{stu.DOB}}</td>
+            <td (click)="populateForm(stu)">{{stu.Address}}</td>
+            <td (click)="populateForm(stu)">{{stu.Email}}</td>
+            <td><button (click)="onDelete(stu.StudentID)" class="btn btn-sm btn-outline-danger"><i class="fa fa-trash"></i></button></td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,24 @@
+<form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+    <input type="hidden" name="MonHocID" #MonHocID="ngModel" [(ngModel)]="service.formData.MonHocID">
+    <div class="form-group">
+        <label>Subjects Name</label>
+        <input type="text" name="MonHocName" #MonHocName="ngModel" [(ngModel)]="service.formData.MonHocName"
+            class="form-control" required>
+        <div class="validation-error" *ngIf="MonHocName.invalid && MonHocName.touched">Không được bỏ trống.</div>
+    </div>
+    <div class="form-group">
+        <label>Semi Test Mark</label>
+        <input type="number" name="Diem15" #Diem15="ngModel" [(ngModel)]="service.formData.Diem15" class="form-control"
+            required>
+        <div class="validation-error" *ngIf="Diem15.invalid && Diem15.touched">Không được bỏ trống.</div>
+    </div>
+    <div class="form-group">
+        <label>Final Test Mark</label>
+        <input type="number" name="Diem45" #Diem45="ngModel" [(ngModel)]="service.formData.Diem45" class="form-control"
+            required>
+        <div class="validation-error" *ngIf="Diem45.invalid && Diem45.touched">Không được bỏ trống.</div>
+    </div>
+    <div class="form-group">
+        <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block">SUBMIT</button>
+    </div>
+</form>
